@@ -22,11 +22,10 @@ using System;
 using Xamarin.Forms;
 using XamarinCRM.Services;
 using XamarinCRM.Localization;
-using XamarinCRM.Pages.Splash;
 using XamarinCRM.Pages;
 using System.Threading.Tasks;
 using Plugin.Connectivity;
-using Xamarin.Forms.Xaml;
+using XamarinCRM.Pages.Home;
 
 //[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 
@@ -56,7 +55,8 @@ namespace XamarinCRM
             // If the App.IsAuthenticated property is false, modally present the SplashPage.
             if (!_AuthenticationService.IsAuthenticated)
             {
-                MainPage = new SplashPage();
+                //MainPage = new SplashPage();
+                MainPage = new LoginPage();
             }
             else
             {
