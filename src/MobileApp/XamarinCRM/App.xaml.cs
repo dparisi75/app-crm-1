@@ -56,7 +56,7 @@ namespace XamarinCRM
             if (!_AuthenticationService.IsAuthenticated)
             {
                 //MainPage = new SplashPage();
-                MainPage = new LoginPage();
+                MainPage = new MyRegistriesRootPage();
             }
             else
             {
@@ -73,8 +73,13 @@ namespace XamarinCRM
             }
             else
             {
-                CurrentApp.MainPage = new RootPage();
+                CurrentApp.MainPage = new MyRootPage();
             }
+        }
+
+        public static void GoToRegistriesRoot()
+        {
+            CurrentApp.MainPage = new MyRegistriesRootPage();
         }
 
         public static async Task ExecuteIfConnected(Func<Task> actionToExecuteIfConnected)

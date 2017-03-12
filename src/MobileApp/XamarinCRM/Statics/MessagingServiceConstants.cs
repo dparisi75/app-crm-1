@@ -21,6 +21,8 @@ namespace XamarinCRM.Statics
         public const string SAVE_LEAD_ERROR = "SAVE_LEAD_ERROR";
 
         public const string UPDATE_ORDER_PRODUCT = "ADD_PRODUCT_TO_ORDER";
+
+        public const string PLACE_FILTER_SET = "PLACE_FILTER_SET";
     }
 }
 

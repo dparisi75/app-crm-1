@@ -18,21 +18,22 @@ namespace XamarinCRM.Pages
 {
 
 
-    public class RootPage : MasterDetailPage
+    public class MyRegistriesRootPage : MasterDetailPage
     {
         Dictionary<MenuType, NavigationPage> Pages { get; set; }
 
-        public RootPage()
+        public MyRegistriesRootPage()
         {
+            MasterBehavior = MasterBehavior.SplitOnLandscape;
             Pages = new Dictionary<MenuType, NavigationPage>();
-            Master = new MenuPage(this);
+            Master = new MyRegistriesRootMenuPage(this);
             BindingContext = new BaseViewModel(Navigation)
             {
                 Title = "Xamarin CRM",
                 Icon = "slideout.png"
             };
             //setup home page
-            NavigateAsync(MenuType.Sales);
+            NavigateAsync(MenuType.Customers);
         }
 
         void SetDetailIfNull(Page page)
