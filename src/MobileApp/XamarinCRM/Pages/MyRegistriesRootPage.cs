@@ -1,8 +1,14 @@
 ﻿
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Xamarin.Forms;
+using XamarinCRM.Pages.About;
 using XamarinCRM.Pages.Customers;
 using XamarinCRM.Pages.Products;
 using XamarinCRM.Pages.Sales;
+<<<<<<< HEAD
+using XamarinCRM.Statics;
+=======
 using XamarinCRM.Pages.Splash;
 using XamarinCRM.ViewModels.Customers;
 using XamarinCRM.ViewModels.Splash;
@@ -12,7 +18,11 @@ using System.Threading.Tasks;
 using XamarinCRM.ViewModels.Base;
 using System.Collections.Generic;
 using XamarinCRM.Pages.About;
+>>>>>>> parent of da9b2cd... Creato list registries
 using XamarinCRM.ViewModels;
+using XamarinCRM.ViewModels.Base;
+using XamarinCRM.ViewModels.Customers;
+using XamarinCRM.ViewModels.Products;
 
 namespace XamarinCRM.Pages
 {

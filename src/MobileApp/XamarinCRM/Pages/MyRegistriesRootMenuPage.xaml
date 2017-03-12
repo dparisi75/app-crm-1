@@ -108,3 +108,4 @@ xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=Ima
         </ListView>
     </ContentPage.Content>
 </ContentPage>
+ 

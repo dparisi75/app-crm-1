@@ -14,7 +14,7 @@ using XamarinCRM.Services;
 namespace XamarinCRM.ViewModels.Customers
 {
     public class CustomersViewModel : BaseViewModel
-    {
+    { 
         ObservableCollection<Account> _Accounts;
         public ObservableCollection<Account> Accounts
         {

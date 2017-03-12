@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<base:CustomersPageXaml
+<base:RegistriesListPageXaml
 xmlns="http://xamarin.com/schemas/2014/forms" 
 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-x:Class="XamarinCRM.Pages.Customers.CustomersPage" 
+x:Class="XamarinCRM.Pages.Customers.RegistriesPage" 
 xmlns:base="clr-namespace:XamarinCRM.Pages.Customers" 
 xmlns:customerViews="clr-namespace:XamarinCRM.Views.Customers">
-	<customerViews:CustomerListView 
+  <customerViews:RegistryListView
 	IsPullToRefreshEnabled="True"
-	ItemsSource="{Binding Accounts}" 
-	RefreshCommand="{Binding LoadAccountsRefreshCommand}" 
+	ItemsSource="{Binding Registries}" 
+	RefreshCommand="{Binding LoadRegistriesRefreshCommand}" 
 	IsRefreshing="{Binding IsBusy, Mode=OneWay}" 
-	ItemTapped="CustomerItemTapped" />
-</base:CustomersPageXaml> 
+	ItemTapped="RegistryItemTapped" />
+</base:RegistriesListPageXaml> 

@@ -7,9 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.WindowsAzure.MobileServices;
 using Microsoft.WindowsAzure.MobileServices.SQLiteStore;
 using Microsoft.WindowsAzure.MobileServices.Sync;
-using Xamarin;
 using Xamarin.Forms;
-using XamarinCRM.Statics;
 using XamarinCRM.Models;
 using XamarinCRM.Services;
 

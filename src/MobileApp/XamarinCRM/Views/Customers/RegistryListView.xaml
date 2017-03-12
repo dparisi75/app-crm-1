@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<views:NonPersistentSelectedItemListView 
+xmlns="http://xamarin.com/schemas/2014/forms" 
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+x:Class="XamarinCRM.Views.Customers.RegistryListView"
+xmlns:views="clr-namespace:XamarinCRM.Views" 
+xmlns:statics="clr-namespace:XamarinCRM.Statics" 
+xmlns:converters="clr-namespace:XamarinCRM.Converters" 
+	HasUnevenRows="false"
+	RowHeight="{x:Static statics:RowSizes.LargeRowHeightInt}"
+	SeparatorColor="{x:Static statics:Palette._013}">
+	<views:NonPersistentSelectedItemListView.ItemTemplate>
+		<DataTemplate>
+			<ViewCell StyleId="disclosure">
+        <StackLayout HorizontalOptions="StartAndExpand" Orientation="Vertical">
+          <StackLayout Padding="5,0,0,0" VerticalOptions="StartAndExpand" Orientation="Vertical">
+            <Label Text="{Binding Name}" VerticalTextAlignment="Center" FontSize="Medium"
+                   TextColor="{x:Static statics:Palette._001}" />
+            <Label Text="{Binding Address}" VerticalTextAlignment="Center" FontSize="Small"
+                   TextColor="{x:Static statics:Palette._002}" />
+          </StackLayout>
+          <StackLayout Padding="5,0,0,0" VerticalOptions="StartAndExpand" Orientation="Horizontal">
+            <Label Text="{Binding Id}" VerticalTextAlignment="Center" FontSize="Medium"
+                   TextColor="{x:Static statics:Palette._007}" />
+            <Label Text="{Binding Vat}" VerticalTextAlignment="Center" FontSize="Small"
+                   TextColor="{x:Static statics:Palette._018}" />
+          </StackLayout> 
+          <!--<Button Text="X" BackgroundColor="Gray" HorizontalOptions="EndAndExpand"/>-->
+        </StackLayout>
+				<!--<ContentView Padding="20,0">
+        
+         public string Name { get; set; }
+        public string Address { get; set; }
+        public int Id { get; set; }
+        public string Vat { get; set; }
+					<RelativeLayout>
+
+						<Label 
+						x:Name="CompanyLabel" 
+						Text="{Binding Company}"
+						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1.0}" 
+						RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.5}" 
+						TextColor="{x:Static statics:Palette._006}"
+						FontSize="{x:Static statics:FontSizes._120PercentOfSmall}"
+						XAlign="Start"
+						YAlign="End"
+						LineBreakMode="TailTruncation" />
+
+						<Label 
+						x:Name="ContactName" 
+						Text="{Binding DisplayContact}"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.5}"
+						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1.0}"
+						RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.5}"
+						TextColor="{x:Static statics:Palette._007}"
+						FontSize="Small"
+						XAlign="Start"
+						YAlign="Start"
+						LineBreakMode="TailTruncation" />
+
+					</RelativeLayout>
+				</ContentView>-->
+			</ViewCell>
+		</DataTemplate>
+	</views:NonPersistentSelectedItemListView.ItemTemplate>
+</views:NonPersistentSelectedItemListView >
