@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
+using XamarinCRM.Pages.Customers;
 using XamarinCRM.ViewModels;
 
 namespace XamarinCRM.Pages

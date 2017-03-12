@@ -25,14 +25,7 @@ using Plugin.Connectivity;
 using Xamarin.Forms;
 using XamarinCRM.Localization;
 using XamarinCRM.Pages;
-<<<<<<< HEAD
 using XamarinCRM.Services;
-using XamarinCRM.Statics;
-=======
-using System.Threading.Tasks;
-using Plugin.Connectivity;
-using XamarinCRM.Pages.Home;
->>>>>>> parent of da9b2cd... Creato list registries
 
 //[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 

@@ -1,14 +1,8 @@
 ﻿
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using Xamarin.Forms;
-using XamarinCRM.Pages.About;
 using XamarinCRM.Pages.Customers;
 using XamarinCRM.Pages.Products;
 using XamarinCRM.Pages.Sales;
-<<<<<<< HEAD
-using XamarinCRM.Statics;
-=======
 using XamarinCRM.Pages.Splash;
 using XamarinCRM.ViewModels.Customers;
 using XamarinCRM.ViewModels.Splash;
@@ -18,11 +12,8 @@ using System.Threading.Tasks;
 using XamarinCRM.ViewModels.Base;
 using System.Collections.Generic;
 using XamarinCRM.Pages.About;
->>>>>>> parent of da9b2cd... Creato list registries
+using XamarinCRM.Statics;
 using XamarinCRM.ViewModels;
-using XamarinCRM.ViewModels.Base;
-using XamarinCRM.ViewModels.Customers;
-using XamarinCRM.ViewModels.Products;
 
 namespace XamarinCRM.Pages
 {
@@ -43,7 +34,8 @@ namespace XamarinCRM.Pages
                 Icon = "slideout.png"
             };
             //setup home page
-            NavigateAsync(MenuType.Customers);
+            NavigateAsync(MenuType.Registries);
+
         }
 
         void SetDetailIfNull(Page page)
@@ -61,40 +53,51 @@ namespace XamarinCRM.Pages
                 {
                     case MenuType.Sales:
                         var page = new CRMNavigationPage(new SalesDashboardPage
-                            { 
-                                Title = TextResources.MainTabs_Sales, 
-                                Icon = new FileImageSource { File = "sales.png" }
-                            });
+                        {
+                            Title = TextResources.MainTabs_Sales,
+                            Icon = new FileImageSource { File = "sales.png" }
+                        });
+                        SetDetailIfNull(page);
+                        Pages.Add(id, page);
+                        break;
+
+                    case MenuType.Registries:
+                        page = new CRMNavigationPage(new RegistriesPage
+                        {
+                            BindingContext = new RegistriesViewModel() { Navigation = this.Navigation },
+                            Title = TextResources.MainTabs_Customers,
+                            Icon = new FileImageSource { File = "customers.png" }
+                        });
                         SetDetailIfNull(page);
                         Pages.Add(id, page);
                         break;
                     case MenuType.Customers:
                         page = new CRMNavigationPage(new CustomersPage
-                            { 
-                                BindingContext = new CustomersViewModel() { Navigation = this.Navigation }, 
-                                Title = TextResources.MainTabs_Customers, 
-                                Icon = new FileImageSource { File = "customers.png" } 
-                            });
+                        {
+                            BindingContext = new CustomersViewModel() { Navigation = this.Navigation },
+                            Title = TextResources.MainTabs_Customers,
+                            Icon = new FileImageSource { File = "customers.png" }
+                        });
                         SetDetailIfNull(page);
                         Pages.Add(id, page);
                         break;
                     case MenuType.Products:
                         page = new CRMNavigationPage(new CategoryListPage
-                            { 
-                                BindingContext = new CategoriesViewModel() { Navigation = this.Navigation }, 
-                                Title = TextResources.MainTabs_Products, 
-                                Icon = new FileImageSource { File = "products.png" } 
-                            });
+                        {
+                            BindingContext = new CategoriesViewModel() { Navigation = this.Navigation },
+                            Title = TextResources.MainTabs_Products,
+                            Icon = new FileImageSource { File = "products.png" }
+                        });
                         SetDetailIfNull(page);
                         Pages.Add(id, page);
                         break;
                     case MenuType.About:
                         page = new CRMNavigationPage(new AboutItemListPage
-                            { 
-                                Title = TextResources.MainTabs_Products, 
-                                Icon = new FileImageSource { File = "about.png" },
-                                BindingContext = new AboutItemListViewModel() { Navigation = this.Navigation }
-                            });
+                        {
+                            Title = TextResources.MainTabs_Products,
+                            Icon = new FileImageSource { File = "about.png" },
+                            BindingContext = new AboutItemListViewModel() { Navigation = this.Navigation }
+                        });
                         SetDetailIfNull(page);
                         Pages.Add(id, page);
                         break;
@@ -115,6 +118,13 @@ namespace XamarinCRM.Pages
 
             if (Device.Idiom != TargetIdiom.Tablet)
                 IsPresented = false;
+
+            if (id == MenuType.Customers)
+            {
+                //workaround per far caricare correttamente la pagina in android
+                MessagingCenter.Send(this, MessagingServiceConstants.AUTHENTICATED);
+            }
+
         }
     }
 

@@ -35,7 +35,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Converters\WholePercentToDecimalPercent.cs" />
+    <Compile Include="Models\Registry.cs" />
     <Compile Include="Pages\CRMNavigationPage.cs" />
+    <Compile Include="Pages\Customers\RegistriesPage.xaml.cs">
+      <DependentUpon>RegistriesPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\GroupMenuItem.cs" />
     <Compile Include="Pages\HomeMenuItem.cs" />
     <Compile Include="Pages\Home\LoginPage.xaml.cs">
@@ -58,8 +62,12 @@
     <Compile Include="Properties\Attributes\DisplayAttribute.cs" />
     <Compile Include="Localization\TranslateExtension.cs" />
     <Compile Include="Converters\ToUpperConverter.cs" />
+    <Compile Include="ViewModels\Customers\RegistriesViewModel.cs" />
     <Compile Include="ViewModels\Home\LoginViewModel.cs" />
     <Compile Include="ViewModels\MyRegistriesRootViewModel.cs" />
+    <Compile Include="Views\Customers\RegistryListView.xaml.cs">
+      <DependentUpon>RegistryListView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Sales\LeadListHeaderView.cs" />
     <Compile Include="Views\Sales\LeadListView.cs" />
     <Compile Include="Views\Sales\SalesChartHeaderView.cs" />
@@ -412,6 +420,16 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>
       </SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Customers\RegistriesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Customers\RegistryListView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
